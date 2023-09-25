@@ -9,8 +9,8 @@
 
 RfSend *tx_whatever;
  
-const char* ssid = "RT-AC1200_30_2G";//type your ssid
-const char* password = "Jevro1337";//type your password
+const char* ssid = "";//type your ssid
+const char* password = "";//type your password
  
 ESP8266WebServer server(80);
  
