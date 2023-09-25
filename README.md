@@ -45,7 +45,7 @@ Install by cloning project or downloading source code
 3. Using your Transceiver module's Rx on Pin 2 (of course with VCC and GND on their own pins)
 4. Run the code next to the receiver of the garage
 5. Follow instructions on Serial, for example when it says to send 3 from your working remote, press 3 times
-6. Once paired, you can use the main code which consist of using an API, I host the same <a href="https://github.com/Jev1337/NiceFlor-Encoder"> generator we used earlier </a> on a website. (You could use without an API, however you would need storage to keep the count of the codes and store the count in a database)
+6. Once paired, you can use the main code which consist of using an API, I host the same <a href="https://github.com/Jev1337/NiceFlor-Encoder"> generator we used earlier </a> on a website using the same serial you just used to pair your card with. (You could use without an API, however you would need storage to keep the count of the codes and store the count in a database)
 
 
 ## FAQ
