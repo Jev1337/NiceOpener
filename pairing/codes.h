@@ -1,0 +1,10 @@
+//const byte mydata_flo[] =    {0x90, 0x91}; // Montée
+//const byte mydata_flo[] =    {0x92, 0x93}; // Descente
+//const byte mydata_flo[] =    {0x94, 0x95}; // Arrêt
+
+//const byte mydata_adf[] =    {0x96, 0x97, 0x98, 0x99};
+const byte mydata_adf_1[] =    {0x4A, 0x9B, 0x9C, 0x9D}; // OPEN
+const byte mydata_adf_2[] =    {0x4E, 0x9F, 0xA0, 0xA1}; // CLOSE
+
+//const byte mydata_sonoff[] = {0xA2, 0xA3, 0xA4};
+
