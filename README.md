@@ -15,7 +15,7 @@ Install by cloning project or downloading source code
 
     
 ## Usage/Examples
-1. Pair your ESP card with the receiver, using the code provided in the pair folder. Make sure to replace the codes with generated ones using <a href="https://github.com/Jev1337/NiceFlor-Encoder"> this generator.</a>. Serial Code MUST be random, you should not use your remote's serial number it will make it out of sync.
+1. Pair your ESP card with the receiver, using the code provided in the pair folder. Make sure to replace the codes with generated ones using <a href="https://github.com/Jev1337/NiceFlor-Encoder"> this generator</a>. Serial Code MUST be random, you should not use your remote's serial number it will make it out of sync.
 ```c
     //Fill these out with code being 1
     byte data1[] = { 0x1 , 0xf6 , 0x60 , 0xba , 0x62 , 0xb , 0x4c };
