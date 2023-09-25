@@ -1,7 +1,7 @@
 <img src="Nice.png" width="100"></img>
 
 # NiceOpener
-An ESPressif (ESP) code to open a Nice FLOR-S garage doors remotely using Internet/Wi-Fi.
+An ESPressif (ESP) code to open a Nice FLOR-S garage doors remotely using Internet/Wi-Fi with an RF433 Transmitter.
 
 
 ## Installation
