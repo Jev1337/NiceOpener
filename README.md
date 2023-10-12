@@ -48,6 +48,13 @@ Install by cloning project or downloading source code
 6. Once paired, you can use the main code which consist of using an API, I host the same <a href="https://github.com/Jev1337/NiceFlor-Encoder"> generator we used earlier </a> on a website using the same serial you just used to pair your card with. (You could use without an API, however you would need storage to keep the count of the codes and store the count in a database)
 
 
+## API
+
+The way the API would work is that the server would send a GET Request containing the encoded code as a JSON, example:
+```json
+{'code': '0x1 0xf7 0x71 0xdd 0x53 0x3a 0x7d'}
+```
+
 ## FAQ
 
 #### What does this do and why?
