@@ -52,7 +52,7 @@ Install by cloning project or downloading source code
 
 The way the API would work is that the server would send a GET Request containing the encoded code as a JSON, example:
 ```json
-{'code': '0x1 0xf7 0x71 0xdd 0x53 0x3a 0x7d'}
+  {'code': '0x1 0xf7 0x71 0xdd 0x53 0x3a 0x7d'}
 ```
 
 ## FAQ
