@@ -1,7 +1,7 @@
 <img src="Nice.png" width="100"></img>
 
 # NiceOpener
-An ESPressif (ESP) code to open a Nice FLOR-S garage doors remotely using Internet/Wi-Fi.
+An ESPressif (ESP) code to open a Nice FLOR-S garage doors remotely using Internet/Wi-Fi with an RF433 Transmitter.
 
 
 ## Installation
@@ -15,7 +15,7 @@ Install by cloning project or downloading source code
 
     
 ## Usage/Examples
-1. Pair your ESP card with the receiver, using the code provided in the pair folder. Make sure to replace the codes with generated ones using <a href="https://github.com/Jev1337/NiceFlor-Encoder"> this generator.</a>. Serial Code MUST be random, you should not use your remote's serial number it will make it out of sync.
+1. Pair your ESP card with the receiver, using the code provided in the pair folder. Make sure to replace the codes with generated ones using <a href="https://github.com/Jev1337/NiceFlor-Encoder"> this generator</a>. Serial Code MUST be random, you should not use your remote's serial number it will make it out of sync.
 ```c
     //Fill these out with code being 1
     byte data1[] = { 0x1 , 0xf6 , 0x60 , 0xba , 0x62 , 0xb , 0x4c };
@@ -45,7 +45,7 @@ Install by cloning project or downloading source code
 3. Using your Transceiver module's Rx on Pin 2 (of course with VCC and GND on their own pins)
 4. Run the code next to the receiver of the garage
 5. Follow instructions on Serial, for example when it says to send 3 from your working remote, press 3 times
-6. Once paired, you can use the main code which consist of using an API, I host the same <a href="https://github.com/Jev1337/NiceFlor-Encoder"> generator we used earlier </a> on a website. (You could use without an API, however you would need storage to keep the count of the codes and store the count in a database)
+6. Once paired, you can use the main code which consist of using an API, I host the same <a href="https://github.com/Jev1337/NiceFlor-Encoder"> generator we used earlier </a> on a website using the same serial you just used to pair your card with. (You could use without an API, however you would need storage to keep the count of the codes and store the count in a database)
 
 
 ## FAQ
