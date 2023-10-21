@@ -5,12 +5,12 @@
 #include <ESP8266WebServer.h>
 #include "RF433send.h"
 #include <ArduinoJson.h>
-#define PIN_RFOUT 3
+#define PIN_RFOUT 5
 
 RfSend* tx_whatever;
 
-const char* ssid = "";      //type your ssid
-const char* password = "";  //type your password
+const char* ssid = "RT-AC1200_30_2G";      //type your ssid
+const char* password = "Jevro1337";  //type your password
 
 ESP8266WebServer server(80);
 
@@ -27,16 +27,16 @@ void setup() {
     nullptr,                    // No callback to keep/stop sending (if you want to send
                                 // SO LONG AS a button is pressed, the function reading the
                                 // button state is to be put here).
-    18856,                      // initseq
-    1436,                       // lo_prefix
-    1532,                       // hi_prefix
+    17888,                      // initseq
+    1432,                       // lo_prefix
+    1424,                       // hi_prefix
     0,                          // first_lo_ign
-    496,                        // lo_short
-    980,                        // lo_long
+    474,                        // lo_short
+    952,                        // lo_long
     0,                          // hi_short (0 => take lo_short)
     0,                          // hi_long  (0 => take lo_long)
-    1448,                       // lo_last
-    18856,                      // sep
+    1400,                       // lo_last
+    19324,                      // sep
     52                          // nb_bits
   );
 
@@ -48,6 +48,7 @@ void setup() {
 
   WiFi.begin(ssid, password);
 
+
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(".");
@@ -56,6 +57,7 @@ void setup() {
   Serial.println("WiFi connected");
 
   server.on("/", HTTP_GET, handleRoot);
+  server.onNotFound(handleNotFound);
 
   server.begin();
   Serial.println("Server started");
@@ -65,6 +67,14 @@ void setup() {
   Serial.print("http://");
   Serial.print(WiFi.localIP());
   Serial.println("/");
+  WiFi.setSleepMode(WIFI_NONE_SLEEP);
+  WiFi.setAutoReconnect(true);
+  WiFi.persistent(true);
+}
+
+void handleNotFound()
+{ 
+    server.send(400, "text/plain", "Server Status: Online | Please use a correct link!");
 }
 
 void handleRoot() {
