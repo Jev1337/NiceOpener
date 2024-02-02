@@ -55,13 +55,16 @@ The way the API would work is that the server would send a GET Request containin
 ```json
   {'code': '0x1 0xf7 0x71 0xdd 0x53 0x3a 0x7d'}
 ```
+The code provided must be the first code generated.
 
 Example of door openeing request:
+Code 1 being for Button 1:
 ```cpp
-"https://your-esp-ip-address/code1?={'code': '0x1 .... .... .... .... .... ....'}" // code 1 being for button 1, insert the first code that comes out of the generator
+"https://your-esp-ip-address/code1?={'code': '0x1 .... .... .... .... .... ....'}" // code 1 being for button 1
 ```
+Code 2 being for Button 2:
 ```cpp
-"https://your-esp-ip-address/code2?={'code': '0x2 .... .... .... .... .... ....'}" // code 2 being for button 2, insert the first code that comes out of the generator
+"https://your-esp-ip-address/code2?={'code': '0x2 .... .... .... .... .... ....'}" // code 2 being for button 2
 ```
 
 ## FAQ
