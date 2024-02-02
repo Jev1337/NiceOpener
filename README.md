@@ -57,7 +57,7 @@ The way the API would work is that the server would send a GET Request containin
 ```
 
 Example of door openeing request:
-```
+```js
 https://your-esp-ip-address/code1?={'code': '0x1 .... .... .... .... .... ....'} // code 1 being for button 1, insert the first code that comes out of the generator
 https://your-esp-ip-address/code2?={'code': '0x2 .... .... .... .... .... ....'} // code 2 being for button 2, insert the first code that comes out of the generator
 ```
