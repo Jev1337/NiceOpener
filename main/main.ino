@@ -78,7 +78,7 @@ void handleNotFound()
 }
 
 void handleRoot() {
-  if (server.hasArg("code1") || server.hasArg("code2")) {
+  if (server.hasArg("code1") || server.hasArg("code2") || server.hasArg("code3") || server.hasArg("code4"){
     String payload;
     if (server.hasArg("code1"))
       payload = server.arg("code1");
@@ -113,6 +113,16 @@ void handleRoot() {
       dataalt1[1] += 0x30;
       dataalt2[1] += 0x20;
       dataalt3[1] -= 0x32;
+    }
+    if (server.hasArg("code3")) {
+      dataalt1[1] -= 0x10;
+      dataalt2[1] -= 0x10;
+      dataalt3[1] += 0x70;
+    }
+    if (server.hasArg("code4")) {
+      dataalt1[1] -= 0x10;
+      dataalt2[1] -= 0x10;
+      dataalt3[1] -= 0x10;
     }
 
     Serial.println("===============DATA-SENT=============");
