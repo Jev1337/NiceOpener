@@ -82,8 +82,12 @@ void handleRoot() {
     String payload;
     if (server.hasArg("code1"))
       payload = server.arg("code1");
-    else
+    else if (server.hasArg("code2"))
       payload = server.arg("code2");
+    else if (server.hasArg("code3"))
+      payload = server.arg("code3");
+    else
+      payload = server.arg("code4");
     Serial.println(payload);
     DynamicJsonDocument doc(1024);
     deserializeJson(doc, payload);
@@ -157,9 +161,9 @@ void handleRoot() {
     tx_whatever->send(sizeof(dataalt2), dataalt2);
     tx_whatever->send(sizeof(dataalt3), dataalt3);
 
-    server.send(200, "text/plain", "recv");
+    server.send(200, "text/plain", "[NiceOpener v1 BETA | INFO] Request Successfully Processed! ");
   } else {
-    server.send(400, "text/plain", "err");
+    server.send(400, "text/plain", "[NiceOpener v1 BETA | INFO] Server is ONLINE");
   }
 }
 
