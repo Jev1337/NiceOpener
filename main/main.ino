@@ -78,7 +78,7 @@ void handleNotFound()
 }
 
 void handleRoot() {
-  if (server.hasArg("code1") || server.hasArg("code2") || server.hasArg("code3") || server.hasArg("code4"){
+  if (server.hasArg("code1") || server.hasArg("code2") || server.hasArg("code3") || server.hasArg("code4")){
     String payload;
     if (server.hasArg("code1"))
       payload = server.arg("code1");
