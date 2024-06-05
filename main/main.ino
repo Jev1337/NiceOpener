@@ -5,12 +5,11 @@
 #include <ESP8266WebServer.h>
 #include "RF433send.h"
 #include <ArduinoJson.h>
+#include <ArduinoOTA.h>
 #define PIN_RFOUT 5
 
 RfSend* tx_whatever;
 
-const char* ssid = "RT-AC1200_30_2G";      //type your ssid
-const char* password = "Jevro1337";  //type your password
 
 ESP8266WebServer server(80);
 
@@ -18,6 +17,8 @@ void setup() {
   Serial.begin(115200);
   delay(10);
 
+  const char* ssid = "RT-AC1200_30_2G";      //type your ssid
+  const char* password = "Jevro1337";  //type your password
   pinMode(PIN_RFOUT, OUTPUT);
   tx_whatever = rfsend_builder(
     RfSendEncoding::TRIBIT,
@@ -45,8 +46,8 @@ void setup() {
   Serial.println();
   Serial.print("Connecting to ");
   Serial.println(ssid);
-
   WiFi.begin(ssid, password);
+
 
 
   while (WiFi.status() != WL_CONNECTED) {
@@ -55,7 +56,7 @@ void setup() {
   }
   Serial.println("");
   Serial.println("WiFi connected");
-
+  ArduinoOTA.begin();
   server.on("/", HTTP_GET, handleRoot);
   server.onNotFound(handleNotFound);
 
@@ -147,13 +148,14 @@ void handleRoot() {
     tx_whatever->send(sizeof(dataalt2), dataalt2);
     tx_whatever->send(sizeof(dataalt3), dataalt3);
 
-    server.send(200, "text/plain", "recv");
+    server.send(200, "text/plain", "Server Status: Online | Signal Sent!");
   } else {
-    server.send(400, "text/plain", "err");
+    server.send(400, "text/plain", "Server Status: Online | Please use a correct link!");
   }
 }
 
 
 void loop() {
+  ArduinoOTA.handle();
   server.handleClient();  // Handle incoming client requests
 }
